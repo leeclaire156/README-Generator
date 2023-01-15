@@ -1,4 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
+// WHEN I choose a license for my application from a list of options
+// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
 
