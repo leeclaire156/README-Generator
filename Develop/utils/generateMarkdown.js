@@ -8,15 +8,14 @@ function renderLicenseBadge(license, color) {
     return ""
   } else {
     // Splits the license option in between name and url code in brackets, []
-    var noSpaceLicense = license.split(" [")
+    var splitLicense = license.split(" [")
     // Stores license name into licenseName variable
-    var licenseName = noSpaceLicense[0]
-    //Replaces space in license name with %20 OR hyphen with double hyphens to keep image link whole yet display with space/hyphen in badge
+    var licenseName = splitLicense[0]
     if (licenseName.includes("-")) {
-      console.log("has hyphen")
+      //Replaces hyphen in license name with double hyphens to keep image link whole yet display with hyphen in badge
       var renderLicense = licenseName.split("-").join("--")
     } else {
-      console.log("has space")
+      //Replaces space in license name with %20 to keep image link whole yet display with space in badge
       var renderLicense = licenseName.split(" ").join("%20")
     }
     //Gets rid of space in badge color list options (i.e. bright green becomes brightgreen)
@@ -61,16 +60,13 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return renderLicenseSection(`${data.license}`)
   return renderLicenseBadge(`${data.license}`, `${data.color}`) + renderLicenseLink(`${data.license}`)
-
-  return `# ${data.title}
+    + `\n# ${data.title}
   
   ## Description
 
   ${data.description}
   
-
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
@@ -89,27 +85,15 @@ function generateMarkdown(data) {
   
   ## How to contribute
   
-  ${data.contributing}
-  
-  ## License
-
-  `
-    +
-
-    renderLicenseBadge(`${data.license}`, `${data.color}`)
-
-    +
-
-    `
-
-  ## Test Instructions
+  ${data.contributing}\n\n`
+    + renderLicenseSection(`${data.license}`) +
+    `\n\n## Test Instructions
 
   ${data.tests}
     
   ## Questions
   
-  If you have any questions, my GitHub profile is [www.github.com/${data.github}](www.github.com/${data.github}), and my email is [${data.email}](mailto:${data.email}).
-`;
+  If you have any questions, my GitHub profile is [www.github.com/${data.github}](www.github.com/${data.github}), and my email is [${data.email}](mailto:${data.email}).`;
 }
 
 module.exports = generateMarkdown;
