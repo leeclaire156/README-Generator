@@ -25,3 +25,5 @@ mailto in markdown file information: https://agea.github.io/tutorial.md/
 table of contents link to titles with spaces credit to [Guillaume](https://community.atlassian.com/t5/user/viewprofilepage/user-id/1164328): https://community.atlassian.com/t5/Bitbucket-questions/How-to-write-a-table-of-contents-in-a-Readme-md/qaq-p/673363
 
 Using include() method to check if string has a certain character: https://careerkarma.com/blog/javascript-string-contains/#:~:text=You%20can%20check%20if%20a,designed%20specifically%20for%20that%20purpose
+
+Using \n to make a new line JS to generate new lines in the markup file: https://www.simplilearn.com/tutorials/javascript-tutorial/javascript-new-line#:~:text=The%20newline%20character%20is%20%5Cn,new%20line%20to%20a%20string.
