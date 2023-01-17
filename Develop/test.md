@@ -1,9 +1,9 @@
-[![License](https://img.shields.io/badge/License-Boost%20Software%20License%201.0-red.svg)](https://choosealicense.com/licenses/bsl-1.0)
+[![License](https://img.shields.io/badge/License-MIT%20License-brightgreen.svg)](https://choosealicense.com/licenses/mit)
 # README Generator
   
   ## Description
 
-  This project...
+  This project is 
   
   ## Table of Contents
   - [Installation](#installation)
@@ -15,23 +15,23 @@
 
   ## Installation
 
-  To install...
+  To install..
 
   ## Usage
   
-  To use...
+  To use this project..
   
   ## How to contribute
   
-  To contribute...
+  Contributions can be made through..
 
 ## License
 
-This application is covered under the Boost Software License 1.0 license.
+This application is covered under the MIT License license.
 
 ## Test Instructions
 
-  To run a test...
+  Tests can be run through..
     
   ## Questions
   
