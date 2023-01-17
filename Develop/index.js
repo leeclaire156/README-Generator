@@ -50,6 +50,15 @@ const questions = [
             "CERN-OHL-P-2.0", "CERN-OHL-W-2.0", "CERN-OHL-S-2.0", "Other", "None"],
         name: "license",
     },
+    {
+        type: "list",
+        message: "What color would you like your license badge to be?",
+        choices: ["bright green", "green", "yellow green",
+            "yellow", "red", "blue", "light grey",
+            "success", "important", "critical", "informative", "inactive",
+            "blue violet", "ff69b4", "9cf"],
+        name: "color",
+    },
     // {
     //     type: "input",
     //     message: "What is your GitHub username?",
