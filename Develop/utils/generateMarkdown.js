@@ -7,9 +7,11 @@ function renderLicenseBadge(license, color) {
   if (license === "None") {
     return ""
   } else {
+    //Replaces space in license name with %20 to keep image link whole
+    var noSpaceLicense = license.split(" ").join("%20")
     //Gets rid of space in badge color list options (i.e. bright green becomes brightgreen)
-    var nospace = color.split(" ").join("")
-    return `[License](https://img.shields.io/badge/${license}-${nospace}.svg)`
+    var noSpaceColor = color.split(" ").join("")
+    return `![License](https://img.shields.io/badge/License-${noSpaceLicense}-${noSpaceColor}.svg)`
   }
 }
 
@@ -35,6 +37,8 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  return renderLicenseBadge(`${data.license}`, `${data.color}`)
+
   return `# ${data.title}
   
   ## Description
@@ -65,7 +69,11 @@ function generateMarkdown(data) {
   ## License
 
   `
-    + renderLicenseBadge(`${data.license}`, `${data.color}`) +
+    +
+
+    renderLicenseBadge(`${data.license}`, `${data.color}`)
+
+    +
 
     `
 
