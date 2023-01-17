@@ -10,11 +10,11 @@ const questions = [
     //     message: "What is the name of your file?",
     //     name: "fileName",
     // },
-    {
-        type: "input",
-        message: "What is the name of your project?",
-        name: "title",
-    },
+    // {
+    //     type: "input",
+    //     message: "What is the name of your project?",
+    //     name: "title",
+    // },
     // {
     //     type: "input",
     //     message: "How would you describe your project",
@@ -43,22 +43,24 @@ const questions = [
     {
         type: "list",
         message: "Which license does your project have?",
-        choices: ["GNU AGPLv3", "GNU GPLv3", "GNU LGPLv3",
-            "Mozilla Public License 2.0", "Apache License 2.0",
-            "MIT License", "Boost Software License 1.0", "The Unlicense",
-            "CC0-1.0", "CC-BY-4.0", "CC-BY-SA-4.0", "SIL Open Font License 1.1",
-            "CERN-OHL-P-2.0", "CERN-OHL-W-2.0", "CERN-OHL-S-2.0", "Other", "None"],
+        choices: ["GNU AGPLv3 [agpl-3.0]", "GNU GPLv3 [gpl-3.0]",
+            "GNU LGPLv3 [lgpl-3.0]", "Mozilla Public License 2.0 [mpl-2.0]",
+            "Apache License 2.0 [apache-2.0]", "MIT License [mit]",
+            "Boost Software License 1.0 [bsl-1.0]", "The Unlicense [unlicense]",
+            "CC0-1.0 [cc0-1.0]", "CC-BY-4.0 [cc-by-4.0]", "CC-BY-SA-4.0 [cc-by-sa-4.0]",
+            "SIL Open Font License 1.1 [ofl-1.1]", "CERN-OHL-P-2.0 [cern-ohl-p-2.0]",
+            "CERN-OHL-W-2.0 [cern-ohl-w-2.0]", "CERN-OHL-S-2.0 [cern-ohl-s-2.0]", "None"],
         name: "license",
     },
-    {
-        type: "list",
-        message: "What color would you like your license badge to be?",
-        choices: ["bright green", "green", "yellow green",
-            "yellow", "red", "blue", "light grey",
-            "success", "important", "critical", "informative", "inactive",
-            "blue violet", "ff69b4", "9cf"],
-        name: "color",
-    },
+    // {
+    //     type: "list",
+    //     message: "What color would you like your license badge to be?",
+    //     choices: ["bright green", "green", "yellow green",
+    //         "yellow", "red", "blue", "light grey",
+    //         "success", "important", "critical", "informative", "inactive",
+    //         "blue violet", "ff69b4", "9cf"],
+    //     name: "color",
+    // },
     // {
     //     type: "input",
     //     message: "What is your GitHub username?",
@@ -76,7 +78,7 @@ const questions = [
 function writeToFile(data) {
     const readmeText = generateMarkdown(data);
     console.log(readmeText);
-    fs.writeFile(`${data.fileName}.md`, readmeText, (err) => err ? console.error(err) : console.log(`${data.fileName}.md created!`));
+    fs.writeFile(`test.md`, readmeText, (err) => err ? console.error(err) : console.log(`${data.fileName}.md created!`));
 }
 
 // TODO: Create a function to initialize app

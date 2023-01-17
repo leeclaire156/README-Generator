@@ -7,21 +7,36 @@ function renderLicenseBadge(license, color) {
   if (license === "None") {
     return ""
   } else {
-    //Replaces space in license name with %20 to keep image link whole
-    var noSpaceLicense = license.split(" ").join("%20")
+    // Splits the license option in between name and url code in brackets, []
+    var noSpaceLicense = license.split(" [")
+    console.log(noSpaceLicense)
+    // Stores license name into licenseName variable
+    var licenseName = noSpaceLicense[0]
+    //Replaces space in license name with %20 OR hyphen with double hyphens to keep image link whole yet display with space/hyphen in badge
+    if (licenseName.includes("-")) {
+      console.log("has hyphen")
+      var renderLicense = licenseName.split("-").join("--")
+    } else {
+      console.log("has space")
+      var renderLicense = licenseName.split(" ").join("%20")
+    }
     //Gets rid of space in badge color list options (i.e. bright green becomes brightgreen)
-    var noSpaceColor = color.split(" ").join("")
-    return `![License](https://img.shields.io/badge/License-${noSpaceLicense}-${noSpaceColor}.svg)`
+    var colorName = color.split(" ").join("")
+    return `[![License](https://img.shields.io/badge/License-${renderLicense}-${colorName}.svg)]`
   }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license === none) {
+  if (license === "None") {
     return "";
   } else {
-
+    // Splits the license option in between name and url code in brackets, []
+    var licenseSplit1 = license.split(" [")
+    // Splits license code from closing square bracket and stores license name into licenseLinkCode variable
+    var licenseLinkCode = licenseSplit1[1].split("]").join("")
+    return `(https://choosealicense.com/licenses/${licenseLinkCode})`
   }
 }
 
@@ -31,13 +46,13 @@ function renderLicenseSection(license) {
   if (license === none) {
     return "";
   } else {
-
+    
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return renderLicenseBadge(`${data.license}`, `${data.color}`)
+  return renderLicenseBadge(`${data.license}`, `${data.color}`) + renderLicenseLink(`${data.license}`)
 
   return `# ${data.title}
   
