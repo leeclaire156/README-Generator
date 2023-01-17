@@ -3,11 +3,13 @@
 // THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
 // If there is no license, return an empty string
 
-function renderLicenseBadge(license) {
+function renderLicenseBadge(license, color) {
   if (license === "None") {
     return ""
   } else {
-    return `[License](https://img.shields.io/badge/${license}-blue.svg)`
+    //Gets rid of space in badge color list options (i.e. bright green becomes brightgreen)
+    var nospace = color.split(" ").join("")
+    return `[License](https://img.shields.io/badge/${license}-${nospace}.svg)`
   }
 }
 
@@ -63,7 +65,7 @@ function generateMarkdown(data) {
   ## License
 
   `
-    + renderLicenseBadge(`${data.license}`) +
+    + renderLicenseBadge(`${data.license}`, `${data.color}`) +
 
     `
 
