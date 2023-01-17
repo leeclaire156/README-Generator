@@ -47,12 +47,12 @@ function renderLicenseSection(license) {
     // Stores license name into licenseName variable
     var licenseName = splitLicense[0]
     //If the license doesn't have the word "The" in it already, does not have the word 'the' preceding the license name
-    return `## License\n\nThis application is covered under ${licenseName} license.`
+    return `## License\n\nThis application is covered under ${licenseName} license.\n\nTo know more about this license, please click on the license badge at the top of this file.`
   } else {
     var splitLicense = license.split(" [")
     var licenseName = splitLicense[0]
     //If the license doesn't have the word "The" in it already, has the word 'the' preceding the license name
-    return `## License\n\nThis application is covered under the ${licenseName} license.`
+    return `## License\n\nThis application is covered under the ${licenseName} license.\n\nTo know more about this license, please click on the license badge at the top of this file.`
   }
 }
 
