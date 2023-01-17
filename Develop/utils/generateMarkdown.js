@@ -9,7 +9,6 @@ function renderLicenseBadge(license, color) {
   } else {
     // Splits the license option in between name and url code in brackets, []
     var noSpaceLicense = license.split(" [")
-    console.log(noSpaceLicense)
     // Stores license name into licenseName variable
     var licenseName = noSpaceLicense[0]
     //Replaces space in license name with %20 OR hyphen with double hyphens to keep image link whole yet display with space/hyphen in badge
@@ -43,15 +42,26 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license === none) {
+  if (license === "None") {
     return "";
+  } else if (license.includes("The")) {
+    // Splits the license option in between name and url code in brackets, []
+    var noSpaceLicense = license.split(" [")
+    // Stores license name into licenseName variable
+    var licenseName = noSpaceLicense[0]
+    //If the license doesn't have the word "The" in it already, does not have the word 'the' preceding the license name
+    return `## License\n\nThis application is covered under ${licenseName} license.`
   } else {
-    
+    var noSpaceLicense = license.split(" [")
+    var licenseName = noSpaceLicense[0]
+    //If the license doesn't have the word "The" in it already, has the word 'the' preceding the license name
+    return `## License\n\nThis application is covered under the ${licenseName} license.`
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  return renderLicenseSection(`${data.license}`)
   return renderLicenseBadge(`${data.license}`, `${data.color}`) + renderLicenseLink(`${data.license}`)
 
   return `# ${data.title}

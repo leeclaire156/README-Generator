@@ -78,7 +78,7 @@ const questions = [
 function writeToFile(data) {
     const readmeText = generateMarkdown(data);
     console.log(readmeText);
-    fs.writeFile(`test.md`, readmeText, (err) => err ? console.error(err) : console.log(`${data.fileName}.md created!`));
+    fs.writeFile(`${data.fileName}.md`, readmeText, (err) => err ? console.error(err) : console.log(`${data.fileName}.md created!`));
 }
 
 // TODO: Create a function to initialize app
