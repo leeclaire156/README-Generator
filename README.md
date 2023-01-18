@@ -14,7 +14,7 @@ In addition, users can designate the filename and a license badge will generate 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
-- [Test Instructions](#test-instructions)
+- [Test Instructions](#tests-instructions)
 - [Questions](#questions)
 
 
@@ -40,28 +40,37 @@ Make sure the following are downloaded:
 
 * This **MUST** be installed into this repository, start by opening the command line interface.
 
-        If you have Visual Code Studio, add the README Generator repository to the workspace. Then, go to 'Settings' either through the cog icon in the lower left corner and clicking Settings, go to File -> Preferences -> Settings in the menu bar, or the key combo of Ctrl+,
+* If you have Visual Code Studio, add the README Generator repository to the workspace. Then, go to 'Settings' either through the cog icon in the lower left corner and clicking Settings, go to File -> Preferences -> Settings in the menu bar, or the key combo of Ctrl+,
 
-        Then, change the settings in "Terminal: Explorer Kind" to "external" in the drop down menu.
+* Then, change the settings in "Terminal: Explorer Kind" to "external" in the drop down menu.
+
+![Changing "Terminal: Explorer Kind" Settings](./Assets/Screenshots/External-Terminal-Settings-1.PNG)
         
-        Change the filepath of the "Terminal > External: [respective operating system]" settings to the preferred command line interface program (either your system's Command Prompts's file path or Git/Git Bash's file path)
+* Change the filepath of the "Terminal > External: [respective operating system]" settings to the preferred command line interface program (either your system's Command Prompts's file path or Git/Git Bash's file path)
 
-        After that, right-click the repository and select "Open in External Terminal"
+![Changing "Terminal > External" Settings](./Assets/Screenshots/External-Terminal-Settings-1.PNG)
+
+* After that, right-click the repository and select "Open in External Terminal"
+
+![User uses Visual Studio Code to access repository through external terminal](./Assets/Screenshots/External-Terminal-Method-1-1.PNG)
+
+![Note the match from Visual Studio Code to the opened external terminal](./Assets/Screenshots/External-Terminal-Method-1-2.PNG)
 
 
+* If you do not have VSC, open the preferred terminal.
 
-        If you do not have VSC, open the preferred terminal.
+* Use "cd Desktop" to first reach the Desktop, cd stands for change directory.
 
-        Use "cd Desktop" to first reach the Desktop, cd stands for change directory.
+* Continue using "cd" to navigate through the file path to reach the location of this repository on your computer.
 
-        Continue using "cd" to navigate through the file path to reach the location of this repository on your computer.
+![User uses Change Directory (cd) to access repository through external terminal](./Assets/Screenshots/External-Terminal-Method-2.PNG)
 
 * Once this repository has been reached, type in `npm i inquirer@8.2.4` into the terminal and hit `Enter`.
 
 
 ## Usage
 
-* A video of this application's usage can be viewed [here](#link-to-be-inserted). If the link is non-functional, a copy of the video can be found in the "Assets" folder.
+* A video of this application's usage can be viewed [here](https://drive.google.com/file/d/1pbLwfHMrcf_RUMx4d5a3OQEtI1hKC_xq/view). If the link is non-functional, a copy of the video can be found in the "Assets" folder.
 
 * To use this application, start by using either of the two methods described in the [Inquirer v8.2.4 Installation Section](#inquirer-version-824---required-to-prompt-questions) to reach this repository through the preferred terminal.
 
